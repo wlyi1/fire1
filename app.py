@@ -10,7 +10,7 @@ creds = service_account.Credentials.from_service_account_info(key_dict)
 db = firestore.Client(credentials=creds, project="testrandom1")
 
 col = db.collection('users')
-st.write(col.get())
+#st.write(col.get())
 
 for doc in col.stream():
     st.write(f'{doc.id} => {doc.to_dict()}')
